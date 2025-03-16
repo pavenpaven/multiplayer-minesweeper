@@ -1,0 +1,8 @@
+{
+	"screen_size"     : [1020, 900],
+	"number_of_mines" : 200,
+	"tile_dimensions" : [34, 30],
+	"tile_size"       : 30,
+	"host_name"       : "127.0.0.1"
+	"service_name"    : "4234"
+}

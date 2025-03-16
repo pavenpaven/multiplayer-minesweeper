@@ -1,0 +1,98 @@
+cabal-version:      3.0
+name:               Mines
+version:            0.1.0.0
+-- synopsis:
+-- description:
+license:            MIT
+license-file:       LICENSE
+author:             Mattias Burman
+maintainer:         mmburman@hotmail.com
+-- copyright:
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+--common warnings
+--    ghc-options: -Wall
+
+executable Mines
+--    import:           warnings
+    main-is:          Local.hs
+    other-modules:    Mines
+                    , Game
+                    , FrontEnd
+                    , NetworkGame
+                    , Buffer
+    -- other-extensions:
+    build-depends:    base
+                    , random
+                    , network
+                    , aeson
+                    , bytestring
+                    , sdl2 >= 2.4.1.0
+                    , sdl2-ttf >= 2.0.0
+                    , vector >= 0.12.1.2
+                    , text   >= 1.2.4.0
+                    , transformers
+                    , containers
+                    , time
+                    , extra
+                    , mtl
+                    , deepseq
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+executable Server
+--    import:           warnings
+    main-is:        Server.hs
+    other-modules:  Game
+                  , NetworkGame
+                  , Buffer
+                  , FrontEnd
+                  , Mines
+    -- other-extensions:
+    build-depends:    base
+                    , random
+                    , network
+                    , aeson
+                    , bytestring
+                    , sdl2 >= 2.4.1.0
+                    , sdl2-ttf >= 2.0.0
+                    , vector >= 0.12.1.2
+                    , text   >= 1.2.4.0
+                    , transformers
+                    , containers
+                    , time
+                    , extra
+                    , mtl
+                    , deepseq
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+executable Client
+--    import:           warnings
+    main-is:        Client.hs
+    other-modules:  Game
+                  , NetworkGame
+                  , Buffer
+                  , FrontEnd
+                  , Mines
+    -- other-extensions:
+    build-depends:    base
+                    , random
+                    , network
+                    , aeson
+                    , bytestring
+                    , sdl2 >= 2.4.1.0
+                    , sdl2-ttf >= 2.0.0
+                    , vector >= 0.12.1.2
+                    , text   >= 1.2.4.0
+                    , transformers
+                    , containers
+                    , time
+                    , extra
+                    , mtl
+                    , deepseq
+    hs-source-dirs:   src
+    default-language: Haskell2010
+    
