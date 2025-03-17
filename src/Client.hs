@@ -68,7 +68,7 @@ getInitialGame =
      return (MkNetworkedMines [] Nothing [] font)
 
 updateOnRecv :: MineConf -> MilliSeconds -> ServerMessage -> NetworkedMines -> NetworkedMines
-updateOnRecv mineConf _ (Init seed) n                      = let mines = traceShowId $ getRandomMines mineConf seed
+updateOnRecv mineConf _ (Init seed) n                      = let mines = getRandomMines mineConf seed
                                                                  startingBoard = [[Hidden | i <- [0..fst (dimensions mineConf)-1]]
                                                                                           | j <- [0..snd (dimensions mineConf)-1]]
                                                              in MkNetworkedMines [] (Just $ MkGamestate startingBoard mines (ntextFont n) False) [] (ntextFont n)
@@ -76,7 +76,7 @@ updateOnRecv mineConf _ (Upd (updMes, conformationsMes)) n = n {acts = acts n ++
                                                                ,sendActs = filter (`notElem` conformationsMes) $ sendActs n}
 
 messageSend :: NetworkedMines -> ClientMessage
-messageSend n = traceShowId (case game n of
+messageSend n = (case game n of
                   Just _  -> Initialized $ sendActs n
                   Nothing -> Uninitialized)
 

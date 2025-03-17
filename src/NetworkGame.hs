@@ -205,7 +205,7 @@ talk connected reciveBuffer sendMVar ind s =
 
 clientTalk :: (ToJSON clientMessage, FromJSON serverMessage) => MVar clientMessage -> Buffer (UnixTime, serverMessage) -> Socket -> IO ()
 clientTalk sendMVar reciveBuffer s =
-  do time <- getUnixTime
+  do time <- fmap (`mod`1000000) getUnixTime -- the mod is for computers with lower int size wtf.
      putStrLn "Sending Packages"
      sendSafe s =<< (fmap (\x -> C.toStrict $ Data.Aeson.encode (time, x)) $ readMVar sendMVar)
      message <- fmap decodeStrict $ recive s
