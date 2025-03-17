@@ -91,7 +91,7 @@ main =
           (do let (w, h)    = screen_size userConf
               let tileWidth = tile_size userConf
               let mineConf  = fromUserConf userConf
-              let host      = host_name userconf
+              let host      = host_name userConf
              -- runGame (defaultConfig {windowConf = windowConfig {windowInitialSize = V2 1020 900}})
              --         (initGameState mineConf)
              --         (draw tileWidth)

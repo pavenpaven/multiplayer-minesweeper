@@ -58,7 +58,7 @@ main =
              runGameServerTCPPlayerID
                (defaultNetConf
                 {hostName = Just host})
-               (\s f -> traceShowId s)
+               (\s f -> s)
                clientUpdate
                clientSend
                (MkServerState M.empty M.empty s))

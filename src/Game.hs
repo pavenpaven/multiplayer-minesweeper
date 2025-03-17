@@ -83,7 +83,7 @@ text font color pos s = MkGraphicalProcess $ Kleisli
           ; SDL.copy r tex Nothing (Just $ Rectangle (P $ convertToV2CInt pos) dim)
           ; freeSurface sur
  
-         ; destroyTexture tex
+          ; destroyTexture tex
           ; return r})
      
 
