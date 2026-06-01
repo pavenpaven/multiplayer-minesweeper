@@ -7,7 +7,6 @@ import FrontEnd
 import Mines
 
 import Data.Aeson
-import Data.Aeson.Decoding
 import Data.ByteString.Lazy as B
 
 main :: IO ()

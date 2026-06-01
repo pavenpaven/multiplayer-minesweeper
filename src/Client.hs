@@ -12,7 +12,6 @@ import FrontEnd
 import Mines
 
 import Data.Aeson
-import Data.Aeson.Decoding
 import Data.Monoid
 import Data.Maybe
 import Data.Function
